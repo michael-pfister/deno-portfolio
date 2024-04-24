@@ -5,8 +5,10 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
+import * as $api_themes_index from "./routes/api/themes/index.ts";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $AppBar from "./islands/AppBar.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import * as $SpinningModel from "./islands/SpinningModel.tsx";
 import * as $TypingAnimation from "./islands/TypingAnimation.tsx";
@@ -17,10 +19,12 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/api/joke.ts": $api_joke,
+    "./routes/api/themes/index.ts": $api_themes_index,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/AppBar.tsx": $AppBar,
     "./islands/Counter.tsx": $Counter,
     "./islands/SpinningModel.tsx": $SpinningModel,
     "./islands/TypingAnimation.tsx": $TypingAnimation,

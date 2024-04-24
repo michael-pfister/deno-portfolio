@@ -1,6 +1,5 @@
 import { Component } from "preact";
 import Typewriter from "npm:typewriter-effect/dist/core.js";
-import { IS_BROWSER } from "$fresh/runtime.ts";
 
 interface TypingAnimationProps {
   strings: string[];

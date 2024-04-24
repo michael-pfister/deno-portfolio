@@ -32,6 +32,9 @@ class SpinningModel extends Component {
         model = gltf.scene;
         scene.add(gltf.scene);
 
+        // rotate to align the model
+        gltf.scene.rotation.y = -1.5;
+
         const animate = function () {
           requestAnimationFrame(animate);
 
@@ -66,7 +69,7 @@ class SpinningModel extends Component {
       },
     );
 
-    camera.position.z = 0.75;
+    camera.position.z = 0.65;
   }
 
   render() {
