@@ -29,7 +29,7 @@ jobs:
         run: "deno task build"
 
       - name: Start Server
-        run: "deno task preview"
+        run: "deno task preview &"
 
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v11
