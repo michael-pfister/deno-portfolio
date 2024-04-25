@@ -1,26 +1,24 @@
-
-name: live
-on: [deployment_status]
+name: Lighthouse
+on:
+    workflow_run:
+        workflows: ['Deploy']
+        types: [completed]
 jobs:
   lighthouse:
-  name: lighthouse    
-  runs-on: ubuntu-latest
-  timeout-minutes: 5
-  if: github.event.deployment_status.state == 'success' && github.event.deployment_status.creator.login == 'deno-deploy[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: github.event.deployment_status.state == 'success' && github.event.deployment_status.creator.login == 'deno-deploy[bot]'
 
-  env:
-    URL: ${{ github.event.deployment_status.environment_url }}
+    env:
+      URL: ${{ github.event.deployment_status.environment_url }}
 
-  steps:
-      - name: Setup repo
-        uses: actions/checkout@v4
+    steps:
+        - name: Setup repo
+          uses: actions/checkout@v4
 
-      - name: Audit URLs using Lighthouse
-          uses: treosh/lighthouse-ci-action@v10
-          env: 
-            LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        - name: Audit URLs using Lighthouse
+          uses: treosh/lighthouse-ci-action@v11
           with:
             temporaryPublicStorage: true
             urls: |
               $URL
-              $URL/docs/introduction
