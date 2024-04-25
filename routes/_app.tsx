@@ -80,7 +80,7 @@ export default function App({ Component }: PageProps) {
     name: "John Doe",
   };
 
-  const url = "https://opensource-deno-portfolio.deno.dev/";
+  const url = "https://opensource-portfolio.deno.dev/";
 
   return (
     <html lang="en">
