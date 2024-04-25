@@ -1,9 +1,9 @@
 name: Lighthouse
 on:
     workflow_run:
-        workflows: ["Deploy"]
-    types:
-      - completed
+      workflows: ["Deploy"]
+      types:
+        - completed
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
