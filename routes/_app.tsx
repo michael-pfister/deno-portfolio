@@ -2,11 +2,64 @@ import { type PageProps } from "$fresh/server.ts";
 import AppBar from "../islands/AppBar.tsx";
 import { Icon } from "@iconify-icon/react";
 
+function MetaTags(credentials: { name: string }) {
+  return (
+    <>
+      {/* Primary Meta Tags */}
+      <title>
+        ${credentials.name} - Experienced Web Developer | Full Portfolio
+      </title>
+      <meta
+        name="title"
+        content={`$${credentials.name} - Experienced Web Developer | Full Portfolio`}
+      />
+      <meta
+        name="description"
+        content={`Explore $${credentials.name}'s portfolio showcasing a diverse range of web development projects. Specializing in full-stack development with expertise in JavaScript, React, Node.js, and more. Discover how I can bring your web vision to life.`}
+      />
+
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://metatags.io/" />
+      <meta
+        property="og:title"
+        content={`$${credentials.name} - Experienced Web Developer | Full Portfolio`}
+      />
+      <meta
+        property="og:description"
+        content={`Explore ${credentials.name}'s portfolio showcasing a diverse range of web development projects. Specializing in full-stack development with expertise in JavaScript, React, Node.js, and more. Discover how I can bring your web vision to life.`}
+      />
+      <meta
+        property="og:image"
+        content="https://metatags.io/images/meta-tags.png"
+      />
+
+      {/* Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://metatags.io/" />
+      <meta
+        property="twitter:title"
+        content={`${credentials.name} - Experienced Web Developer | Full Portfolio`}
+      />
+      <meta
+        property="twitter:description"
+        content={`Explore ${credentials.name}'s portfolio showcasing a diverse range of web development projects. Specializing in full-stack development with expertise in JavaScript, React, Node.js, and more. Discover how I can bring your web vision to life.`}
+      />
+      <meta
+        property="twitter:image"
+        content="https://metatags.io/images/meta-tags.png"
+      />
+
+      {/* Meta Tags Generated with https://metatags.io */}
+    </>
+  );
+}
+
 export default function App({ Component }: PageProps) {
   const socials = [
     {
       name: "GitHub",
-      url: "https://github.com/michael-pfister",
+      url: "https://github.com/michael-pfister/deno-portfolio",
       icon: "fa-brands:github",
     },
     {
@@ -21,11 +74,16 @@ export default function App({ Component }: PageProps) {
     },
   ];
 
+  const credentials = {
+    name: "John Doe",
+  };
+
   return (
-    <html>
+    <html lang="en">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <MetaTags {...credentials} />
         <title>Developer Portfolio</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>

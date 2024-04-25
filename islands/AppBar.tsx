@@ -31,7 +31,11 @@ export default function AppBar() {
           </a>
         </li>
         <li>
-          <button class="btn" onClick={() => toggleTheme(themes)}>
+          <button
+            class="btn"
+            aria-label="change Theme"
+            onClick={() => toggleTheme(themes)}
+          >
             <Icon
               class="active:animate-spin"
               icon="ri:dice-line"
