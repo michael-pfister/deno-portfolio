@@ -19,8 +19,11 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Audit Code
-        run: "deno task check"
+      - name: Check Code Formatting
+        run: "deno fmt --check"
+
+      - name: Lint Code
+        run: "deno lint"
 
       - name: Build step
         run: "deno task build"
