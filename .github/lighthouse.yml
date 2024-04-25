@@ -1,7 +1,7 @@
 name: Lighthouse
 on:
     workflow_run:
-        workflows: ['Validate']
+        workflows: ['Deploy']
         types: [completed]
 jobs:
   lighthouse:
