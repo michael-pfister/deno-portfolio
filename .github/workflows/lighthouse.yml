@@ -1,12 +1,14 @@
 name: Lighthouse
 on:
     workflow_run:
-        workflows: ['Deploy']
-        types: [completed]
+        workflows: ["Deploy"]
+    types:
+      - completed
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+
     if: github.event.deployment_status.state == 'success' && github.event.deployment_status.creator.login == 'deno-deploy[bot]'
 
     env:
