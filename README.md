@@ -1,5 +1,4 @@
-![image](https://github.com/michael-pfister/deno-portfolio/assets/63919069/68757f25-e530-4e64-ac66-cc2a4861b493)
-
+<kbd><img src="https://github.com/michael-pfister/deno-portfolio/assets/63919069/68757f25-e530-4e64-ac66-cc2a4861b493" alt="portfolio hero section"/></kbd>
 This is an open source developer portfolio made using
 [ThreeJS](https://threejs.org/) and [denoland fresh](https://fresh.deno.dev/).
 The project has an MIT license which is a permissive software license. You may
