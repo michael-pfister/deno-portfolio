@@ -1,5 +1,6 @@
 import { type Config } from "tailwindcss";
 import daisyui from "daisyui";
+import themes from "daisyui/src/theming/themes.js";
 
 export default {
   content: [
@@ -9,6 +10,13 @@ export default {
   plugins: [daisyui],
   daisyui: {
     themes: [
+      // set themes for light/dark mode other than the default
+      {
+        // @ts-ignore Types don't work with this
+        light: themes.winter,
+        // @ts-ignore Types don't work with this
+        dark: themes.forest,
+      },
       "light",
       "dark",
       "cupcake",
@@ -37,10 +45,10 @@ export default {
       "lemonade",
       "night",
       "coffee",
-      "winter",
       "dim",
       "nord",
       "sunset",
+      "winter",
     ],
   },
 } satisfies Config;

@@ -14,6 +14,7 @@ function toggleTheme(themes: string[]) {
   const randomTheme = filteredThemes[Math.floor(Math.random() * themes.length)];
 
   html?.setAttribute("data-theme", randomTheme);
+  localStorage.setItem("theme", randomTheme);
 }
 export default function AppBar() {
   const [themes, setThemes] = useState([]);
