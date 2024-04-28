@@ -16,6 +16,7 @@ loadIcons([
   "logos:php",
   "logos:typescript-icon",
   "skill-icons:react-dark",
+  "logos:vue",
   "devicon:nextjs",
   "skill-icons:nuxtjs-dark",
   "logos:nestjs",
@@ -203,10 +204,10 @@ function Projects() {
       <h1 class="text-3xl font-bold text-primary text-center mb-4">
         Projects and Contributions
       </h1>
-      <div class="flex flex-wrap justify-center items-center">
+      <div class="flex flex-wrap justify-center items-center gap-2">
         {projects.map((project) => (
           <div class="card max-w-96">
-            <div class="card-body py-4 px-2">
+            <div class="card-body p-4">
               <h2 class="card-title">
                 <Icon icon={project.icon} width="24" height="24" />
                 {project.title}
