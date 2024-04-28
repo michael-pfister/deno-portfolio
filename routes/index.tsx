@@ -1,7 +1,34 @@
 import SpinningModel from "../islands/SpinningModel.tsx";
 import TypingAnimation from "../islands/TypingAnimation.tsx";
-import { Icon } from "@iconify-icon/react";
+import { Icon, loadIcons } from "@iconify-icon/react";
 import Wave from "../components/Wave.tsx";
+
+// preload icons
+loadIcons([
+  "majesticons:suitcase",
+  "tabler:calendar-filled",
+  "carbon:location-filled",
+  "logos:deno",
+  "logos:vue",
+  "vscode-icons:file-type-js-official",
+  "logos:html-5",
+  "logos:css-3",
+  "logos:php",
+  "logos:typescript-icon",
+  "skill-icons:react-dark",
+  "devicon:nextjs",
+  "skill-icons:nuxtjs-dark",
+  "logos:nestjs",
+  "logos:fresh",
+  "skill-icons:laravel-dark",
+  "skill-icons:tailwindcss-dark",
+  "logos:nodejs",
+  "logos:mongodb",
+  "logos:postgresql",
+  "devicon:mariadb-wordmark",
+  "logos:cassandra",
+  "logos:docker",
+]);
 
 function Hero() {
   return (
