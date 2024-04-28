@@ -1,6 +1,7 @@
 import { Component } from "preact";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 class SpinningModel extends Component {
   componentDidMount() {
@@ -17,6 +18,9 @@ class SpinningModel extends Component {
       1000,
     );
     const renderer = new THREE.WebGLRenderer({ alpha: true });
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.autoRotate = true;
 
     renderer.setSize(dimensions.x, dimensions.y);
     document.getElementById("model-container")?.appendChild(
@@ -35,12 +39,16 @@ class SpinningModel extends Component {
         // rotate to align the model
         gltf.scene.rotation.y = -1.5;
 
+        // put the model in the middle of the scene
+        const box = new THREE.Box3().setFromObject(gltf.scene);
+        const center = new THREE.Vector3();
+        box.getCenter(center);
+        gltf.scene.position.sub(center);
+
         const animate = function () {
           requestAnimationFrame(animate);
 
-          gltf.scene.rotation.x += 0.003;
-          gltf.scene.rotation.y += 0.003;
-
+          controls.update();
           renderer.render(scene, camera);
         };
 
@@ -55,21 +63,8 @@ class SpinningModel extends Component {
     const light = new THREE.AmbientLight(0x404040, 75); // soft white light
     scene.add(light);
 
-    // Add mousemove event listener
-    document.getElementById("model-container")?.addEventListener(
-      "mousemove",
-      (event) => {
-        if (model) {
-          const mouseX = (event.clientX / dimensions.x) * 2 - 1;
-          const mouseY = -(event.clientY / dimensions.y) * 2 + 1;
-
-          model.rotation.x = mouseY;
-          model.rotation.y = mouseX;
-        }
-      },
-    );
-
     camera.position.z = 0.65;
+    controls.update();
   }
 
   render() {
