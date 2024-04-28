@@ -179,7 +179,7 @@ function Projects() {
       <div class="flex flex-wrap justify-center items-center">
         {projects.map((project) => (
           <div class="card max-w-96">
-            <div class="card-body py-4">
+            <div class="card-body py-4 px-2">
               <h2 class="card-title">
                 <Icon icon={project.icon} width="24" height="24" />
                 {project.title}
