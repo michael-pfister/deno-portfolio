@@ -38,12 +38,17 @@ class SpinningModel extends Component {
 
         // rotate to align the model
         gltf.scene.rotation.y = -1.5;
+        gltf.scene.rotation.x = 0.25;
 
         // put the model in the middle of the scene
         const box = new THREE.Box3().setFromObject(gltf.scene);
         const center = new THREE.Vector3();
         box.getCenter(center);
         gltf.scene.position.sub(center);
+
+        // scale the model to fit the scene
+        const scale = 1.3;
+        gltf.scene.scale.set(scale, scale, scale);
 
         const animate = function () {
           requestAnimationFrame(animate);
