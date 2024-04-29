@@ -17,8 +17,8 @@ export default {
         // @ts-ignore Types don't work with this
         dark: themes.forest,
       },
-      "light",
-      "dark",
+      // "light",
+      // "dark",
       "cupcake",
       "bumblebee",
       "emerald",
@@ -29,7 +29,7 @@ export default {
       "valentine",
       "halloween",
       "garden",
-      "forest",
+      // "forest",
       "aqua",
       "lofi",
       "pastel",
@@ -48,7 +48,7 @@ export default {
       "dim",
       "nord",
       "sunset",
-      "winter",
+      // "winter",
     ],
   },
 } satisfies Config;
