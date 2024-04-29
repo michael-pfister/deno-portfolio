@@ -250,12 +250,12 @@ function Technologies() {
     "skill-icons:laravel-dark",
     "skill-icons:tailwindcss-dark",
     "logos:deno",
-    "logos:nodejs",
-    "logos:mongodb",
+    "devicon:nodejs",
+    "vscode-icons:file-type-mongo",
     "logos:postgresql",
-    "devicon:mariadb-wordmark",
-    "logos:cassandra",
-    "logos:docker",
+    "logos:mariadb-icon",
+    "skill-icons:cassandra-light",
+    "skill-icons:docker",
   ];
 
   return (
