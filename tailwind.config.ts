@@ -13,7 +13,7 @@ export default {
       // set themes for light/dark mode other than the default
       {
         // @ts-ignore Types don't work with this
-        light: themes.winter,
+        light: { ...themes.cmyk, primary: "#1A9AEA" },
         // @ts-ignore Types don't work with this
         dark: themes.forest,
       },
@@ -38,7 +38,7 @@ export default {
       "black",
       "luxury",
       "dracula",
-      "cmyk",
+      // "cmyk",
       "autumn",
       "business",
       "acid",
@@ -48,7 +48,7 @@ export default {
       "dim",
       "nord",
       "sunset",
-      // "winter",
+      "winter",
     ],
   },
 } satisfies Config;
