@@ -11,8 +11,9 @@ export default function Error404() {
         <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
           <Icon
             icon="material-symbols-light:error"
-            width="128"
-            height="128"
+            class="w-16 h-16 text-primary"
+            width="none"
+            height="none"
           />
           <h1 class="text-4xl font-bold">404 - Page not found</h1>
           <p class="my-4">
