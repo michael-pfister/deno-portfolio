@@ -5,6 +5,11 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 class SpinningModel extends Component {
   componentDidMount() {
+    const loadingManager = new THREE.LoadingManager();
+    loadingManager.onLoad = () => {
+      document.getElementById("loading-overlay")?.remove();
+    };
+
     const dimensions = {
       x: document.getElementById("model-container")?.clientWidth || 0,
       y: document.getElementById("model-container")?.clientHeight || 0,
@@ -27,7 +32,7 @@ class SpinningModel extends Component {
       renderer.domElement,
     );
 
-    const loader = new GLTFLoader();
+    const loader = new GLTFLoader(loadingManager);
     let model: THREE.Object3D | undefined;
 
     loader.load(
@@ -73,7 +78,20 @@ class SpinningModel extends Component {
   }
 
   render() {
-    return <div id="model-container" class="w-[400px] aspect-square" />;
+    return (
+      <div class="relative w-[400px] aspect-square">
+        <div
+          id="loading-overlay"
+          class="absolute w-full h-full bg-[rgba(0,0,0,0.3)] animate-pulse rounded-lg flex justify-center items-center"
+        >
+          <span>Loading 3D Model</span>
+        </div>
+        <div
+          id="model-container"
+          class="w-full h-full"
+        />
+      </div>
+    );
   }
 }
 
