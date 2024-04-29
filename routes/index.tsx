@@ -219,7 +219,11 @@ function Projects() {
                 <span class="badge badge-ghost ml-auto">{project.type}</span>
               </h2>
               <p>{project.description}</p>
-              <a href={project.link} target="_blank" class="btn btn-primary">
+              <a
+                href={project.link}
+                target="_blank"
+                class="btn btn-primary text-base-100"
+              >
                 View Project
               </a>
             </div>

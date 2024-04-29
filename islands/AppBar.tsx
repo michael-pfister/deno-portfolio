@@ -36,7 +36,11 @@ export default function AppBar() {
       </a>
       <ul class="flex gap-2">
         <li>
-          <a class="btn btn-primary" href="/cv.pdf" download>
+          <a
+            class="btn btn-primary text-base-100"
+            href="/cv.pdf"
+            download
+          >
             Download CV
           </a>
         </li>
