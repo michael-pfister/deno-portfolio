@@ -87,12 +87,12 @@ function Values() {
       <section class="p-4 flex justify-center items-center gap-4 flex-wrap bg-primary">
         {values.map((value, i) => (
           <div
-            class={"card md:max-w-64 bg-base-100 flex-row md:flex-col shadow-lg" +
+            class={"card md:h-auto md:max-w-64 bg-base-100 flex-row md:flex-col shadow-lg" +
               (i % 2 ? " md:-translate-y-8" : "")}
           >
-            <figure class="w-1/3 md:w-auto rounded-none rounded-l-box md:rounded-none md:rounded-t-box">
+            <figure class="w-1/3 md:h-48 md:w-auto rounded-none rounded-l-box md:rounded-none md:rounded-t-box">
               <img
-                class="h-full w-full object-cover"
+                class="w-full h-full object-cover"
                 src={value.image}
                 alt={value.title}
               />
@@ -209,7 +209,12 @@ function Projects() {
           <div class="card max-w-96">
             <div class="card-body p-4">
               <h2 class="card-title">
-                <Icon icon={project.icon} width="24" height="24" />
+                <Icon
+                  class="w-6 h-6"
+                  icon={project.icon}
+                  width="none"
+                  height="none"
+                />
                 {project.title}
                 <span class="badge badge-ghost ml-auto">{project.type}</span>
               </h2>
@@ -226,36 +231,43 @@ function Projects() {
 }
 
 function Technologies() {
+  const technologies = [
+    "vscode-icons:file-type-js-official",
+    "logos:html-5",
+    "logos:css-3",
+    "logos:php",
+    "logos:typescript-icon",
+    "skill-icons:react-dark",
+    "logos:vue",
+    "devicon:nextjs",
+    "skill-icons:nuxtjs-dark",
+    "logos:nestjs",
+    "logos:fresh",
+    "skill-icons:laravel-dark",
+    "skill-icons:tailwindcss-dark",
+    "logos:deno",
+    "logos:nodejs",
+    "logos:mongodb",
+    "logos:postgresql",
+    "devicon:mariadb-wordmark",
+    "logos:cassandra",
+    "logos:docker",
+  ];
+
   return (
     <section class="my-16">
       <h1 class="text-3xl font-bold text-primary text-center mb-4">
         Technologies
       </h1>
       <div class="p-4 flex justify-center items-center flex-wrap gap-4">
-        <Icon
-          icon="vscode-icons:file-type-js-official"
-          width="32"
-          height="32"
-        />
-        <Icon icon="logos:html-5" width="32" height="32" />
-        <Icon icon="logos:css-3" width="32" height="32" />
-        <Icon icon="logos:php" width="32" height="32" />
-        <Icon icon="logos:typescript-icon" width="32" height="32" />
-        <Icon icon="skill-icons:react-dark" width="32" height="32" />
-        <Icon icon="logos:vue" width="32" height="32" />
-        <Icon icon="devicon:nextjs" width="32" height="32" />
-        <Icon icon="skill-icons:nuxtjs-dark" width="32" height="32" />
-        <Icon icon="logos:nestjs" width="32" height="32" />
-        <Icon icon="logos:fresh" width="32" height="32" />
-        <Icon icon="skill-icons:laravel-dark" width="32" height="32" />
-        <Icon icon="skill-icons:tailwindcss-dark" width="32" height="32" />
-        <Icon icon="logos:deno" width="32" height="32" />
-        <Icon icon="logos:nodejs" width="32" height="32" />
-        <Icon icon="logos:mongodb" width="32" height="32" />
-        <Icon icon="logos:postgresql" width="32" height="32" />
-        <Icon icon="devicon:mariadb-wordmark" width="32" height="32" />
-        <Icon icon="logos:cassandra" width="32" height="32" />
-        <Icon icon="logos:docker" width="32" height="32" />
+        {technologies.map((technology) => (
+          <Icon
+            class="w-8 h-8"
+            icon={technology}
+            width="none"
+            height="none"
+          />
+        ))}
       </div>
     </section>
   );

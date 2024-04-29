@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Avoid Layout Shift */
+iconify-icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+iconify-icon svg {
+  object-fit: fill;
+}
