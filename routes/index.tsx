@@ -150,15 +150,27 @@ function Experience() {
               <div class="card-body p-4">
                 <h2 class="card-title">{experience.title}</h2>
                 <span class="flex items-center gap-2 text-gray">
-                  <Icon icon="majesticons:suitcase" width="24" height="24" />
+                  <Icon
+                    icon="majesticons:suitcase"
+                    width="none"
+                    height="none"
+                  />
                   {experience.company}
                 </span>
                 <span class="flex items-center gap-2 text-gray">
-                  <Icon icon="tabler:calendar-filled" width="24" height="24" />
+                  <Icon
+                    icon="tabler:calendar-filled"
+                    width="none"
+                    height="none"
+                  />
                   {experience.timePeriod}
                 </span>
                 <span class="flex items-center gap-2 text-gray">
-                  <Icon icon="carbon:location-filled" width="24" height="24" />
+                  <Icon
+                    icon="carbon:location-filled"
+                    width="none"
+                    height="none"
+                  />
                   {experience.location}
                 </span>
               </div>
